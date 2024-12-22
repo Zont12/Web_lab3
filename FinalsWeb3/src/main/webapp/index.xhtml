@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Лабораторная работа</title>
+    <h:outputStylesheet library="css" name="styless343.css"/>
+</h:head>
+
+<h:body>
+    <!-- Основная таблица с изображениями (шапка) -->
+    <h:panelGroup layout="block" styleClass="lab-table">
+        <!-- Левая картинка -->
+        <h:panelGroup layout="block" id="first_image" styleClass="image-left">
+            <h:graphicImage styleClass="image"/>
+        </h:panelGroup>
+
+        <!-- Центр с текстом -->
+        <h:panelGroup layout="block" id="cap" styleClass="text-center">
+            Лабораторная работа 2
+            <p>Солодовников Данила Дмитриевич P3207</p>
+            <p>Вариант 409329</p>
+        </h:panelGroup>
+
+        <!-- Правая картинка -->
+        <h:panelGroup layout="block" id="second_image" styleClass="image-right">
+            <h:graphicImage styleClass="image"/>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <!-- Основной контейнер для таблицы с графиком и кнопками -->
+    <h:panelGroup layout="block" styleClass="main-table">
+        <h:panelGroup layout="block" styleClass="table-row">
+            <!-- Левая колонка с графиком -->
+            <h:panelGroup layout="block" styleClass="table-cell">
+                <h:panelGroup layout="block" styleClass="First_block">
+                    <h:panelGroup layout="block" styleClass="table-row">
+                        <h:panelGroup layout="block" id="graph-block" styleClass="table-cell">
+                            <!-- Элемент canvas для рисования графика -->
+                            <canvas id="graphCanvas" width="400" height="400" style="border:2px solid black;"></canvas>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:panelGroup>
+
+            <!-- Правая колонка с таблицей кнопок -->
+            <h:panelGroup layout="block" styleClass="table-cell">
+                <h:panelGroup layout="block" styleClass="Second_block">
+                    <h:panelGroup layout="block" styleClass="table-row">
+                        <h:panelGroup layout="block" styleClass="table-cell">
+                            <h:panelGroup layout="block" styleClass="button_table">
+                                <!-- Строка для X с полем ввода -->
+                                <h:panelGroup layout="block" styleClass="table-row" id="X">
+                                    <h:panelGroup layout="block" styleClass="table-cell label-cell">
+                                        <h:outputLabel for="x-input" value="X:"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup layout="block" styleClass="table-cell">
+                                        <h:inputText id="x-input" styleClass="text-input" value="#{pointBean.x}">
+                                            <f:ajax event="change" render="@form"/>
+                                        </h:inputText>
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Ползунок Y -->
+                                <h:panelGroup layout="block" styleClass="table-row" id="Y">
+                                    <h:panelGroup layout="block" styleClass="table-cell label-cell">
+                                        <h:outputLabel for="y-value" value="Y:"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup layout="block" styleClass="table-cell">
+
+                                        <!-- Поле для отображения текущего значения -->
+                                        <h:inputText id="y-value" value="#{pointBean.y}"
+                                                     style="width: 150px; text-align: center;" styleClass="text-input">
+                                            <f:ajax event="change" render="@form"/>
+                                        </h:inputText>
+
+                                        <!-- Ползунок PrimeFaces -->
+                                        <p:slider for="y-value" minValue="-3" maxValue="3" step="0.5" styleClass="y-slider"/>
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Строка для R с радио кнопками -->
+                                <h:panelGroup layout="block" styleClass="table-row" id="R">
+                                    <h:panelGroup layout="block" styleClass="table-cell label-cell">
+                                        <h:outputLabel for="r-value" value="R:"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup layout="block" styleClass="table-cell">
+
+                                        <!-- Поле для отображения текущего значения -->
+                                        <h:inputText id="r-value" value="#{pointBean.r}"
+                                                     style="width: 150px; text-align: center;" styleClass="text-input">
+                                            <f:ajax event="change" render="@form"/>
+                                        </h:inputText>
+
+                                        <!-- Ползунок PrimeFaces -->
+                                        <p:slider for="r-value" minValue="2" maxValue="5" step="0.1" styleClass="r-slider"/>
+                                    </h:panelGroup>
+                                </h:panelGroup>
+
+                                <!-- Строка для кнопок управления -->
+                                <h:form>
+                                    <h:panelGroup layout="block" styleClass="table-row">
+                                        <h:panelGroup layout="block" style="text-align: center; padding-top: 10px;" styleClass="table-cell">
+                                            <h:commandButton id="submit-btn" value="Отправить" styleClass="control-btn" action="#{formBean.processForm(pointBean)}">
+                                                <f:ajax execute="@form" render="@form"/>
+                                            </h:commandButton>
+                                            <h:commandButton id="clear-btn" value="Очистить таблицу" styleClass="control-btn" action="#{formBean.processForm(pointBean)}">
+                                                <f:ajax execute="@form" render="@form"/>
+                                            </h:commandButton>
+                                        </h:panelGroup>
+                                    </h:panelGroup>
+                                </h:form>
+
+                            </h:panelGroup>
+                        </h:panelGroup>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:panelGroup>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <h:panelGroup layout="block" styleClass="Set-table">
+        <h:dataTable value="#{resultBean.results}" var="result" styleClass="result">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="X"/>
+                </f:facet>
+                <h:outputText value="#{result.x}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Y"/>
+                </f:facet>
+                <h:outputText value="#{result.y}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="R"/>
+                </f:facet>
+                <h:outputText value="#{result.r}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Время исполнения (наносекунды)"/>
+                </f:facet>
+                <h:outputText value="#{result.executionTime} ns"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Результат попадания"/>
+                </f:facet>
+                <h:outputText value="#{result.isHit ? 'You are god damn right!' : 'NO NO NO NO'}" style="#{result.isHit ? 'color: yellow;' : 'color: red;'}"/>
+            </h:column>
+        </h:dataTable>
+    </h:panelGroup>
+
+    <!-- JavaScript для вывода значения Mybean.x в консоль -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var xInput = document.getElementById("x-input");
+            if (xInput) {
+                logger.info("Adding result: " + bean.getX());
+            }
+        });
+    </script>
+</h:body>
+<h:outputScript library="js" name="graph.js"/>
+</html>

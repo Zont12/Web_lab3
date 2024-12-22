@@ -1,0 +1,397 @@
+/* Основные стили */
+/* Основная таблица */
+.lab-table {
+    display: flex; /* Флексбокс для размещения содержимого */
+    justify-content: space-between; /* Размещает элементы по краям */
+    align-items: center; /* Выравнивание по вертикали */
+    width: 100%; /* Занимает всю ширину */
+    padding: 20px; /* Отступы */
+    background-image: url("https://7themes.su/_ph/40/548422915.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid black;
+    height: 150px;
+}
+
+/* Стили для заголовков таблицы */
+#cap {
+    text-align: center;
+    line-height: 1.5; /* Увеличивает высоту строк */
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Стили для изображений */
+#first_image,
+#second_image {
+    width: 200px; /* Ширина изображения */
+    height: 150px; /* Высота изображения */
+    background-size: cover;
+    background-position: center;
+}
+
+#first_image {
+    background-image: url("https://sun6-20.userapi.com/impg/nrW96zg8Wa4F9Xb8oSwTmbJB0PWumVchG_tweQ/h9ge_gcysZE.jpg?size=1890x1417&quality=96&sign=969e89d97787249ce19c9783be14d98d&type=album");
+}
+
+#second_image {
+    background-image: url("https://sun9-14.userapi.com/impg/o7K_ssLGUh4Z032gwi_LVg8sNfkZVttoqOoTtw/vSy5h8cMqEc.jpg?size=1890x1417&quality=96&sign=5e3e336119ad6f24ddeeaee14481e521&type=album");
+}
+
+body {
+    margin: 0;
+    height: 150vh;
+    background-image: url("https://www.northerniowan.com/wp-content/uploads/2024/03/breaking-bad-1200x675.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Стили для блока main-block */
+.main-table {
+    text-align: center;
+    position: absolute;
+    width: 1100px;
+    height: auto;
+    border: 5px solid black;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-table::before {
+    content: "";
+    opacity: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://7themes.su/_ph/40/548422915.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+#graph-block {
+    float: left;
+    text-align: left;
+    margin-top: 20px;
+    filter: brightness(70%);
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-image: url("https://lifehacker.ru/wp-content/uploads/2016/02/cover_1455227228.jpg");
+    background-size: 100% 100%;
+    border: 5px solid black;
+}
+
+.Second_block {
+    margin-top: 100px;
+    margin-right: 20px;
+    float: right;
+    border: 5px solid black;
+    height: 250px;
+    width: 450px;
+    background-image: url("https://img.freepik.com/premium-photo/old-green-board-texture-grunge-background_625816-828.jpg");
+    background-size: contain;
+
+}
+
+/* Центрирование основной таблицы */
+.button_table {
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+/* Общие стили для ячеек с метками */
+.label-cell {
+    text-align: center;
+    padding: 5px;
+}
+
+#X label,
+#Y .label-cell,
+#R .label-cell {
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+#X {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#x-input {
+    background-color: darkgreen;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+}
+
+
+
+#Y {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.clock-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.clock-text {
+    font-family: Arial, sans-serif;
+}
+
+.text-input {
+    background-color: darkgreen;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+}
+
+.y-slider {
+    background-color: white !important;
+}
+
+/* Удаление синего обводящего эффекта (если есть) */
+.y-slider .ui-slider-handle {
+    border-color: black !important; /* Цвет границы ползунка */
+    box-shadow: none !important;   /* Убирает синее свечение */
+}
+
+.y-slider .ui-slider-range {
+    background-color: green !important; /* Цвет уже пройденной части */
+}
+.y-slider .ui-widget-content {
+    background-color: white !important; /* Цвет непройденной части */
+}
+
+.r-slider {
+    background-color: white !important;
+}
+
+/* Удаление синего обводящего эффекта (если есть) */
+.r-slider .ui-slider-handle {
+    border-color: black !important; /* Цвет границы ползунка */
+    box-shadow: none !important;   /* Убирает синее свечение */
+}
+
+.r-slider .ui-slider-range {
+    background-color: green !important; /* Цвет уже пройденной части */
+}
+
+.r-slider .ui-widget-content {
+    background-color: white !important; /* Цвет непройденной части */
+}
+
+
+#R {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+}
+
+
+#r-input {
+    background-color: darkgreen;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+
+}
+
+
+.control-btn {
+    background-color: darkgreen;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Изменение цвета кнопки при наведении */
+.control-btn:hover {
+    background-color: limegreen;
+    color: black;
+}
+
+
+.error-popup {
+    position: absolute;
+    background-color: green;
+    font-family: 'Courier New', monospace;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -110%);
+
+}
+
+.error-popup::after {
+    opacity: 0.8;
+    content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: green transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+
+}
+
+.Top {
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+.Set-table {
+    text-align: center;
+    position: absolute;
+    width: 1100px;
+    height: auto;
+    border: 5px solid black;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-image: url("https://7themes.su/_ph/40/548422915.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    border-bottom: none;
+}
+
+
+.Set-table tbody td {
+    color: white;
+    font-family: 'Courier New', monospace;
+    border-bottom: 2px solid black;
+
+}
+
+.Set-table th,
+.Set-table td {
+    border-right: 3px solid black;
+    padding: 10px;
+    border-bottom: 2px solid black;
+
+}
+
+/* Удаляем вертикальную границу у последней ячейки */
+.Set-table th:last-child,
+.Set-table td:last-child {
+    border-right: none;
+    border-bottom: 2px solid black;
+
+}
+
+.special-set-table {
+    width: 90%;
+    margin: -450px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background-color: darkgreen;
+    border: 2px solid white;
+    font-family: 'Courier New', monospace;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-align: center;
+
+}
+
+.clock-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Занимает всю высоту viewport */
+}
+
+#clock-circle {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-family: Monospaced, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 20px solid darkgreen;
+    margin-top: -300px
+}
+
+#current-time {
+    color: black; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    font-family: Monospaced, sans-serif; /* Шрифт */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    height: 100vh; /* Занимает всю высоту viewport */
+    /* Перемещаем кнопку вниз */
+}
+
+.main-button {
+    background-color: darkgreen; /* Зеленый цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 15px 32px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block; /* Инлайн-блок */
+    font-size: 16px; /* Размер шрифта */
+    margin: 4px 2px; /* Внешние отступы */
+    cursor: pointer; /* Курсор при наведении */
+    border-radius: 12px; /* Скругление углов */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+    font-family: Monospaced, sans-serif; /* Шрифт */
+    transform: translateX(135%); /* Центрируем кнопку по горизонтали */
+    margin-top: 25px;
+}
+
+.main-button:hover {
+    background-color: #45a049; /* Цвет фона при наведении */
+}

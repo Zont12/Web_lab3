@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Лабораторная работа</title>
+    <h:outputStylesheet library="css" name="styless343.css"/>
+    <h:outputScript library="js" name="updateTime.js"/>
+</h:head>
+
+<h:body>
+    <!-- Основная таблица с изображениями (шапка) -->
+    <h:panelGroup layout="block" styleClass="lab-table">
+        <!-- Левая картинка -->
+        <h:panelGroup layout="block" id="first_image" styleClass="image-left">
+            <h:graphicImage styleClass="image"/>
+        </h:panelGroup>
+
+        <!-- Центр с текстом -->
+        <h:panelGroup layout="block" id="cap" styleClass="text-center">
+            Лабораторная работа 2
+            <p>Солодовников Данила Дмитриевич P3207</p>
+            <p>Вариант 409329</p>
+        </h:panelGroup>
+
+        <!-- Правая картинка -->
+        <h:panelGroup layout="block" id="second_image" styleClass="image-right">
+            <h:graphicImage styleClass="image"/>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <h:form id="formStart">
+        <div class="welcomeButton">
+            <h:commandButton id="buttonMain" value="Перейти на главную страницу приложения"
+                             action="index.xhtml"
+                             styleClass="main-button"/>
+        </div>
+    </h:form>
+
+    <!-- Контейнер для круга с временем -->
+    <h:panelGroup layout="block" styleClass="clock-container">
+        <div class="clock-wrapper">
+            <div id="clock-circle">
+                <span id="current-time"></span>
+            </div>
+        </div>
+    </h:panelGroup>
+</h:body>
+</html>
